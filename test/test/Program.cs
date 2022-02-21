@@ -10,26 +10,30 @@ namespace test
         string Book_genre { get; set; }
         string Author_name { get; set; }
         int Book_price { get; set; }
+        bool Available { get; set; }
 
         //methods
         void Getbook_name();
         void Getbook_price();
         void Getbook_author();
         void Getbook_genre();
+        void Getbook_availability();
     }
 
     class Implements_book : IBook
     {
-        //default values- fields
+        //fields
         private string name = "The Great Gatsby";
         private string genre = "Historical Fiction";
         private string author = "F. Scott Fitzgerald";
         private int price = 7;
+        private bool status = true;
         //properties
         public string Book_name { get => name; set => Book_name = value; }
         public string Book_genre { get => genre; set => Book_genre = value; }
         public string Author_name { get => author ; set => Author_name = value; }
         public int Book_price { get => price; set => Book_price = value; }
+        public bool Available { get => status; set => Available = value; }
 
         //instance methods
         public void Getbook_author()
@@ -50,6 +54,10 @@ namespace test
         {
             Console.WriteLine($"The book genre is {Book_genre}");
         }
+        public void Getbook_availability()
+        {
+            Console.WriteLine($"The book availability status is {Available}");
+        }
     }
 
 
@@ -63,6 +71,7 @@ namespace test
             book1.Getbook_name();
             book1.Getbook_price();
             book1.Getbook_genre();
+            book1.Getbook_availability();
         }
     }
 }
